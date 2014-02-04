@@ -142,7 +142,7 @@ game.populateBragButton = function() {
 
   // Let's JSONify it
   var challengeString = JSON.stringify(challengeObject);
-  challengeString = btoa(challengeString);
+  challengeString = b64Utils.utf8_to_b64(challengeString);
   var linkUrl = constants.LINK_PAGE_BASE + "?gamedata=" + challengeString;
 
   // If we wanted, we could also have a different link for the calltoaction

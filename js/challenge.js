@@ -33,7 +33,7 @@ challenge.tryToLoad = function()
   var challengeString = challenge.getURLParameter('gamedata');
   if (challengeString && challengeString != 'null') {
     console.log("Received challenge string ", challengeString);
-    var decodedString = atob(challengeString);
+    var decodedString = b64Utils.b64_to_utf8(challengeString);
     console.log("Decoded as ", decodedString);
     var challengeObject = JSON.parse(decodedString);
     console.log("Parsed into ",challengeObject);
